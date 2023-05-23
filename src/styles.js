@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { FcEmptyTrash, FcCheckmark } from "react-icons/fc";
+
 export const Container = styled.div`
   background: linear-gradient(90deg, #383838 0%, #000000 81.25%);
   width: 100vw;
@@ -25,7 +27,9 @@ export const Input = styled.input`
   border-radius: 5px;
   width: 342px;
   height: 40px;
-  margin-right: 40px; 
+  margin-right: 40px;
+  font-size: 1rem;
+  padding-left: 10px;
 `
 
 export const Button = styled.button`
@@ -38,11 +42,20 @@ export const Button = styled.button`
   line-height: 2px;
   color: #FFFFFF;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 `
 
 
 export const ListItem = styled.div`
-  background: ${ props => props.isFinished ? '#E8FF8F' : '#E4E4E4'};
+  background: ${ props => props.isFinished ? '#66DE7E' : '#E4E4E4'};
   box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   height: 60px;
@@ -57,5 +70,28 @@ export const ListItem = styled.div`
   li {
     list-style: none;
   }
-
 `
+
+export const Message = styled.p`
+color: gray;
+background: #e4e4e4;
+padding: 20px 10px;
+border-radius: 6px;
+text-align: center
+;
+`
+
+
+
+export const TrashIcon = styled(FcEmptyTrash)`
+cursor: pointer;
+height: 30px;
+width: 30px;
+`
+
+export const CheckIcon = styled(FcCheckmark)`
+cursor: pointer;
+height: 25px;
+width: 25px;
+`
+
